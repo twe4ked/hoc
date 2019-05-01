@@ -93,9 +93,8 @@ pub fn run(find_renames_and_copies: bool) {
 }
 
 fn integer_from_slice(slice: &[u8]) -> usize {
-    let n: usize = str::from_utf8(slice)
+    str::from_utf8(slice)
         .expect("not a string")
-        .parse()
-        .expect("not a number");
-    n
+        .parse::<usize>()
+        .expect("not a number")
 }
