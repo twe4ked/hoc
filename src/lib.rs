@@ -73,7 +73,7 @@ pub fn run(find_renames_and_copies: bool) {
                     }
                 }
                 b'\n' => in_word = false,
-                b'0'...b'9' => {
+                b'0'..=b'9' => {
                     if !in_word {
                         num.push(*c);
                     }
